@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+@Pale_blue: hsl(225, 100%, 94%);
+@Bright_blue: hsl(245, 75%, 52%);
+@Very_pale_blue: hsl(225, 100%, 98%);
+@Desaturated_blue: hsl(224, 23%, 55%);
+@Dark_blue: hsl(223, 47%, 23%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button,
+img,
+span {
+  display: block;
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: @Pale_blue;
+  position: relative;
+  line-height: 1.5;
+}
+
+.bg-image {
+  position: absolute;
+  inset: 0;
+  background: url("./images/pattern-background-mobile.svg")
+  no-repeat center / cover;
+  height: 25vh;
+  z-index: -1;
+}
+
+@media only screen and (min-width: 500px) {
+  .bg-image {
+    background: url("./images/pattern-background-desktop.svg")
+    no-repeat center / cover;
+    height: 50vh;
+  }
+}
+
+.card-container {
+  max-width: 360px;
+  margin-inline: 20px;
+  background-color: white;
+  border-radius: 12px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-content {
+  margin-block-start: 10px;
+  padding: 25px;
+  
+  h1 {
+    font-size: 1.5rem;
+    color: @Dark_blue;
+    text-align: center;
+    margin-block-end: 20px;
+    font-weight: 900;
+  }
+  
+  .card-text {
+    color: @Desaturated_blue;
+    text-align: center;
+    margin-block-end: 25px;
+  }
+  
+  .price-container {
+    margin-block-end: 25px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    padding: 15px 15px;
+    background-color: @Very_pale_blue;
+    
+    .price {
+      margin-left: 20px;
+      
+      .price-title {
+        margin-block-end: 2px;
+        font-size: 14px;
+        font-weight: 900;
+        color: @Dark_blue;
+      }
+      
+      .price-text {
+        color: @Desaturated_blue;
+        font-size: 14px;
+      }
+    }
+    
+    .underline-text {
+      margin-left: auto;
+      text-decoration: underline;
+      font-size: 14px;
+      font-weight: 600;
+      color: @Bright_blue;
+      
+      &:hover { 
+        color: #766BF1; 
+        text-decoration: none;
+      }
+    }
+  }
+  
+  .payment-btn {
+    width: 100%;
+    background-color: @Bright_blue;
+    color: #fff;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 900;
+    border-radius: 10px;
+    padding-block: 15px;
+    border: none;
+    box-shadow: 0 10px 20px hsla(245, 75%, 52%, 0.3);
+    margin-block-end: 25px;
+    
+    &:hover { background-color: #766BF1; }
+  }
+  
+  .cancel { display: flex; }
+  
+  .cancel-btn {
+    font: inherit;
+    display: inline-block;
+    background: none;
+    border: none;
+    margin: auto;
+    font-weight: 900;
+    color: @Desaturated_blue;
+    
+    &:hover { color: @Dark_blue; }
+  }
+}
